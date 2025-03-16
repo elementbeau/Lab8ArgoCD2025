@@ -16,8 +16,8 @@ jobs:
       run: |
         echo "${{ secrets.DOCKERPASSWORD }}" | docker login -u "beaucoffie" --password-stdin
         docker build -t cool_docker .
-        docker tag cool_docker beaucoffie/nice_docker:latest
-        docker push beaucoffie/nice_docker:latest
+        docker tag cool_docker beaucoffie/web_page_beau:latest
+        docker push beaucoffie/web_page_beau:latest
     - name: Create kubeconfig
       run: |
         mkdir ${HOME}/.kube
