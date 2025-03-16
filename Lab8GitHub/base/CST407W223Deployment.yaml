@@ -2,10 +2,11 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: cst407-deployment
+  namespace: cst407-deployment
   labels:
     app: cst407
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: cst407
