@@ -18,7 +18,7 @@ spec:
       terminationGracePeriodSeconds: 30
       containers:
       - name: cst407
-        image: beaucoffie/nice_docker:latest
+        image: beaucoffie/web_page_beau:latest
         imagePullPolicy: "Always"
         ports:
         - containerPort: 80
