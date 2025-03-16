@@ -1,21 +1,15 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: cst407net-service
-  annotations:
-    service.beta.kubernetes.io/linode-loadbalancer-throttle: "4"
   labels:
-    app: cst407net-service
+    app.kubernetes.io/instance: cst407webpage
+  name: cst407net-service
+  namespace: cst407-deployment
 spec:
-  type: LoadBalancer
   ports:
-  - name: http
-  #loadbalancer port
-    port: 80
-    protocol: TCP
-    targetPort: 80
-    # this pod port 
+    - port: 80
+      protocol: TCP
+      targetPort: 31460
   selector:
-  # now we choose which pods to load balance
     app: cst407
-  sessionAffinity: None
+  type: NodePort
